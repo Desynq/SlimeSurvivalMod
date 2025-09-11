@@ -18,6 +18,6 @@ public class FoodDataMixin {
     )
     private boolean modifyNaturalRegenFlag(boolean original, Player player) {
         // Add your extra condition
-        return original && !player.getTags().contains("no_natural_regeneration");
+        return original && player.getTags().stream().noneMatch(tag -> tag.endsWith("no_natural_regeneration"));
     }
 }
