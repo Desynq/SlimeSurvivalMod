@@ -1,8 +1,10 @@
 package io.github.desynq.slimesurvival.mixin;
 
+import io.github.desynq.slimesurvival.event.NaturalRegenerationCheckEvent;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodData;
 import net.minecraft.world.level.GameRules;
+import net.neoforged.neoforge.common.NeoForge;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
@@ -17,7 +19,8 @@ public class FoodDataMixin {
             ordinal = 0 // index of 'flag' in locals (it's the first boolean)
     )
     private boolean modifyNaturalRegenFlag(boolean original, Player player) {
-        // Add your extra condition
-        return original && player.getTags().stream().noneMatch(tag -> tag.endsWith("no_natural_regeneration"));
+        NaturalRegenerationCheckEvent event = new NaturalRegenerationCheckEvent(player, original);
+        NeoForge.EVENT_BUS.post(event);
+        return original && !event.isCanceled();
     }
 }

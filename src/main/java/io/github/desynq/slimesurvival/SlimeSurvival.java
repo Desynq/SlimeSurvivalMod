@@ -1,5 +1,7 @@
 package io.github.desynq.slimesurvival;
 
+import io.github.desynq.slimesurvival.dev.DevOnlyEvents;
+import io.github.desynq.slimesurvival.event.NaturalRegenerationCheckEvent;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.commands.BossBarCommands;
 import net.minecraft.server.commands.GameRuleCommand;
@@ -16,6 +18,7 @@ import net.minecraft.world.item.ArmorMaterials;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.neoforged.bus.api.EventPriority;
+import net.neoforged.fml.loading.FMLEnvironment;
 import net.neoforged.neoforge.common.extensions.IItemStackExtension;
 import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
 import org.slf4j.Logger;
@@ -65,11 +68,9 @@ public class SlimeSurvival
     // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically.
     public SlimeSurvival(IEventBus modEventBus, ModContainer modContainer)
     {
-
-        // Register ourselves for server and other game events we are interested in.
-        // Note that this is necessary if and only if we want *this* class (ExampleMod) to respond directly to events.
-        // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
-        // NeoForge.EVENT_BUS.register(this);
+        if (!FMLEnvironment.production) {
+            NeoForge.EVENT_BUS.register(DevOnlyEvents.class);
+        }
         // NeoForge.EVENT_BUS.addListener(EventPriority.HIGH, false, LivingIncomingDamageEvent.class, (event) -> {});
 
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
