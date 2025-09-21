@@ -1,4 +1,4 @@
-package io.github.desynq.slimesurvival.event;
+package io.github.desynq.slimesurvival.mixin;
 
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.food.FoodProperties;
