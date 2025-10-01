@@ -27,10 +27,10 @@ public class LivingEntityMixin {
             NeoForge.EVENT_BUS.post(event);
 
             if (!event.isCanceled()) {
-                ((LivingEntityAccess) self).slimesurvival$invokeAddEatEffect(props);
+                ((LivingEntityAccessor) self).slimesurvival$invokeAddEatEffect(props);
             }
         } else {
-            ((LivingEntityAccess) self).slimesurvival$invokeAddEatEffect(props);
+            ((LivingEntityAccessor) self).slimesurvival$invokeAddEatEffect(props);
         }
     }
 }

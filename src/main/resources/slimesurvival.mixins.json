@@ -3,8 +3,10 @@
   "package": "io.github.desynq.slimesurvival.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "BeeAccessor",
+    "BeeMixin",
     "FoodDataMixin",
-    "LivingEntityAccess",
+    "LivingEntityAccessor",
     "LivingEntityMixin"
   ],
   "client": [],

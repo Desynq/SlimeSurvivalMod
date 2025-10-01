@@ -6,7 +6,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.gen.Invoker;
 
 @Mixin(LivingEntity.class)
-public interface LivingEntityAccess {
+public interface LivingEntityAccessor {
 
     @Invoker("addEatEffect")
     void slimesurvival$invokeAddEatEffect(FoodProperties props);

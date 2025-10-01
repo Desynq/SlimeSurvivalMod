@@ -1,6 +1,7 @@
 package io.github.desynq.slimesurvival.dev;
 
 import io.github.desynq.slimesurvival.SlimeSurvival;
+import io.github.desynq.slimesurvival.event.BeeStingEvent;
 import io.github.desynq.slimesurvival.event.NaturalRegenerationCheckEvent;
 import io.github.desynq.slimesurvival.event.PlayerEatEffectEvent;
 import net.minecraft.world.item.Items;
@@ -22,5 +23,10 @@ public class DevOnlyEvents {
         if (event.getStack().is(Items.ROTTEN_FLESH)) {
             event.setCanceled(true);
         }
+    }
+
+    @SubscribeEvent
+    public static void infiniteBeeSting(BeeStingEvent event) {
+        event.setCanStingAgain(true);
     }
 }
