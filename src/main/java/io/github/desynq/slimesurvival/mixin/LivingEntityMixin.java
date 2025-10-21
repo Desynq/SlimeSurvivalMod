@@ -1,6 +1,7 @@
 package io.github.desynq.slimesurvival.mixin;
 
 import io.github.desynq.slimesurvival.event.DamageAfterArmorEvent;
+import io.github.desynq.slimesurvival.event.LivingBeforeJumpEvent;
 import io.github.desynq.slimesurvival.event.PlayerEatEffectEvent;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.LivingEntity;
@@ -14,6 +15,7 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.Redirect;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(LivingEntity.class)
@@ -34,7 +36,8 @@ public class LivingEntityMixin {
             if (!event.isCanceled()) {
                 ((LivingEntityAccessor) self).slimesurvival$invokeAddEatEffect(props);
             }
-        } else {
+        }
+        else {
             ((LivingEntityAccessor) self).slimesurvival$invokeAddEatEffect(props);
         }
     }
@@ -71,5 +74,20 @@ public class LivingEntityMixin {
         NeoForge.EVENT_BUS.post(event);
 
         cir.setReturnValue((event.getFinalDamage()));
+    }
+
+    @Inject(
+            method = "jumpFromGround",
+            at = @At("HEAD"),
+            cancellable = true
+    )
+    private void slimesurvival$jumpFromGround(CallbackInfo ci) {
+        LivingEntity entity = (LivingEntity) (Object) this;
+        LivingBeforeJumpEvent event = new LivingBeforeJumpEvent(entity);
+        NeoForge.EVENT_BUS.post(event);
+
+        if (event.isCanceled()) {
+            ci.cancel();
+        }
     }
 }
