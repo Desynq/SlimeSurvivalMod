@@ -9,7 +9,9 @@
     "LivingEntityAccessor",
     "LivingEntityMixin"
   ],
-  "client": [],
+  "client": [
+    "TooltipMixin"
+  ],
   "injectors": {
     "defaultRequire": 1
   }
