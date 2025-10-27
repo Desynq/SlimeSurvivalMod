@@ -1,5 +1,6 @@
 package io.github.desynq.slimesurvival.mixin;
 
+import io.github.desynq.slimesurvival.util.ItemCooldownsExt;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemCooldowns;
 import org.spongepowered.asm.mixin.Final;

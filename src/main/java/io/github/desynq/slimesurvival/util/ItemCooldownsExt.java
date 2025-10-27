@@ -1,4 +1,4 @@
-package io.github.desynq.slimesurvival.mixin;
+package io.github.desynq.slimesurvival.util;
 
 import net.minecraft.world.item.Item;
 
