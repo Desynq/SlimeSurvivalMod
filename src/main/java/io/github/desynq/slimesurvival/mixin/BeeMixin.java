@@ -22,7 +22,7 @@ public class BeeMixin {
             )
     )
     private void onBeeSting(Entity target, CallbackInfoReturnable<Boolean> cir) {
-        Bee bee = (Bee) (Object) this;
+        Bee bee = Bee.class.cast(this);
         if (target instanceof LivingEntity living) {
             BeeStingEvent event = new BeeStingEvent(bee, living);
             NeoForge.EVENT_BUS.post(event);
