@@ -2,10 +2,13 @@ package io.github.desynq.slimesurvival.dev;
 
 import io.github.desynq.slimesurvival.event.BeeStingEvent;
 import io.github.desynq.slimesurvival.event.DamageAfterArmorEvent;
+import io.github.desynq.slimesurvival.event.IsInvisibleEvent;
 import io.github.desynq.slimesurvival.event.NaturalRegenerationCheckEvent;
 import io.github.desynq.slimesurvival.event.PlayerEatEffectEvent;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.monster.Creeper;
 import net.minecraft.world.item.Items;
 import net.neoforged.bus.api.SubscribeEvent;
 
@@ -39,5 +42,13 @@ public class DevOnlyEvents {
         double factor = 20.0;
         double newDamage = Math.max(1, damage - toughness) * (factor / (factor + armor));
         event.setFinalDamage((float) newDamage);
+    }
+
+    @SubscribeEvent
+    public static void invisibleCreepers(IsInvisibleEvent event) {
+        Entity entity = event.getEntity();
+        if (entity instanceof Creeper) {
+            event.setInvisibility(true);
+        }
     }
 }

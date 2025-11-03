@@ -5,6 +5,7 @@
   "mixins": [
     "BeeAccessor",
     "BeeMixin",
+    "EntityMixin",
     "FoodDataMixin",
     "ItemCooldownsMixin",
     "LivingEntityAccessor",
