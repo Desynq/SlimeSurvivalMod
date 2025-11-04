@@ -1,0 +1,44 @@
+{
+  "item.slimesurvival.unbreaking_tome": "Unbreaking Tome",
+  "item.slimesurvival.lesser_unbreaking_tome": "Lesser Unbreaking Tome",
+  "item.slimesurvival.crash_helmet": "Crash Helmet",
+  "item.slimesurvival.band_of_regeneration": "Band of Regeneration",
+  "item.slimesurvival.royal_jelly": "Royal Jelly",
+  "item.slimesurvival.royal_wax": "Royal Wax",
+  "item.slimesurvival.mystite_ore": "Mystite Ore",
+  "item.slimesurvival.mystite_ingot": "Mystite Ingot",
+  "item.slimesurvival.medical_kit": "Medical Kit",
+  "item.slimesurvival.keycard_0": "Keycard Level 0",
+  "item.slimesurvival.keycard_1": "Keycard Level 1",
+  "item.slimesurvival.keycard_2": "Keycard Level 2",
+  "item.slimesurvival.keycard_3": "Keycard Level 3",
+  "item.slimesurvival.keycard_4": "Keycard Level 4",
+  "item.slimesurvival.keycard_5": "Keycard Level 5",
+  "item.slimesurvival.keycard_6": "Keycard Level 6",
+  "item.slimesurvival.morphine_syringe": "Morphine Syringe",
+  "item.slimesurvival.slimy_eye": "Slimy Eye",
+
+
+
+  "effect.slimesurvival.pinged": "Pinged",
+  "effect.slimesurvival.pinged.description": "You feel a shiver down your spine...",
+
+  "effect.slimesurvival.rooted": "Rooted",
+  "effect.slimesurvival.rooted.description": "Makes you unable to jump.",
+
+  "effect.slimesurvival.adventure": "Adventure",
+  "effect.slimesurvival.adventure.description": "Forces you into adventure mode",
+
+  "effect.slimesurvival.weak_knees": "Weak Knees",
+  "effect.slimesurvival.weak_knees.description": "You feel a shiver down your spine...",
+
+
+
+  "death.attack.slimesurvival.entropy_kill": "%s's was quantized",
+  "death.attack.slimesurvival.entropy_kill.item": "%s was quantized by %s using %s",
+  "death.attack.slimesurvival.entropy_kill.player": "%s was quantized by %s",
+
+  "death.attack.slimesurvival.entropy_attack": "%s was quantized",
+  "death.attack.slimesurvival.entropy_attack.item": "%s was quantized by %s using %s",
+  "death.attack.slimesurvival.entropy_attack.player": "%s was quantized by %s"
+}

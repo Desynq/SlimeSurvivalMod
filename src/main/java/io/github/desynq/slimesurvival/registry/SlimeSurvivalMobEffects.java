@@ -2,7 +2,9 @@ package io.github.desynq.slimesurvival.registry;
 
 import io.github.desynq.slimesurvival.SlimeSurvival;
 import io.github.desynq.slimesurvival.common.effect.AdventureEffect;
+import io.github.desynq.slimesurvival.common.effect.PingedEffect;
 import io.github.desynq.slimesurvival.common.effect.RootedEffect;
+import io.github.desynq.slimesurvival.common.effect.WeakKneesEffect;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.effect.MobEffect;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -15,4 +17,8 @@ public class SlimeSurvivalMobEffects {
     public static final DeferredHolder<MobEffect, RootedEffect> ROOTED = EFFECTS.register("rooted", RootedEffect::new);
 
     public static final DeferredHolder<MobEffect, AdventureEffect> ADVENTURE = EFFECTS.register("adventure", AdventureEffect::new);
+
+    public static final DeferredHolder<MobEffect, PingedEffect> PINGED = EFFECTS.register("pinged", PingedEffect::new);
+
+    public static final DeferredHolder<MobEffect, WeakKneesEffect> WEAK_KNEES = EFFECTS.register("weak_knees", WeakKneesEffect::new);
 }

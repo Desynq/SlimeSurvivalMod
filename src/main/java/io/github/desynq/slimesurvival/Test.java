@@ -1,64 +1,67 @@
 package io.github.desynq.slimesurvival;
 
-import com.mojang.brigadier.arguments.IntegerArgumentType;
-import com.mojang.brigadier.context.CommandContext;
-import net.minecraft.client.KeyMapping;
-import net.minecraft.client.Minecraft;
-import net.minecraft.core.Vec3i;
+import io.github.desynq.slimesurvival.util.ItemCooldownsExt;
+import net.minecraft.client.model.EntityModel;
 import net.minecraft.core.component.DataComponents;
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.server.MinecraftServer;
-import net.minecraft.server.commands.EffectCommands;
-import net.minecraft.server.commands.GameRuleCommand;
-import net.minecraft.server.commands.GiveCommand;
-import net.minecraft.server.commands.MsgCommand;
-import net.minecraft.server.commands.RideCommand;
-import net.minecraft.server.commands.SayCommand;
-import net.minecraft.server.commands.TeleportCommand;
-import net.minecraft.server.commands.TimeCommand;
-import net.minecraft.server.commands.WeatherCommand;
-import net.minecraft.server.commands.data.DataCommands;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.damagesource.DamageSources;
-import net.minecraft.world.damagesource.DamageTypes;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.ai.goal.AvoidEntityGoal;
-import net.minecraft.world.entity.animal.Wolf;
-import net.minecraft.world.entity.animal.horse.Horse;
-import net.minecraft.world.entity.item.ItemEntity;
-import net.minecraft.world.entity.monster.Creeper;
-import net.minecraft.world.entity.monster.EnderMan;
-import net.minecraft.world.entity.monster.Slime;
-import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.animal.Bee;
+import net.minecraft.world.entity.monster.Skeleton;
 import net.minecraft.world.entity.projectile.Arrow;
-import net.minecraft.world.item.ArmorMaterials;
-import net.minecraft.world.item.BowItem;
-import net.minecraft.world.item.CrossbowItem;
-import net.minecraft.world.item.Item;
+import net.minecraft.world.item.EnderpearlItem;
+import net.minecraft.world.item.ItemCooldowns;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.component.Unbreakable;
-import net.minecraft.world.item.enchantment.Enchantments;
-import net.minecraft.world.level.GameRules;
-import net.minecraft.world.phys.Vec3;
-import net.neoforged.neoforge.event.OnDatapackSyncEvent;
-import net.neoforged.neoforge.event.entity.ProjectileImpactEvent;
-import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
-import net.neoforged.neoforge.event.entity.living.LivingEntityUseItemEvent;
-import net.neoforged.neoforge.event.entity.living.LivingFallEvent;
-import net.neoforged.neoforge.event.entity.living.MobEffectEvent;
-import net.neoforged.neoforge.event.entity.living.MobSpawnEvent;
-import net.neoforged.neoforge.event.entity.player.CanPlayerSleepEvent;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.DoorBlock;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.AABB;
+import net.neoforged.neoforge.client.event.RenderLivingEvent;
+import net.neoforged.neoforge.event.VanillaGameEvent;
 
-import java.util.Optional;
+import java.io.BufferedReader;
+import java.io.File;
+import java.nio.file.Path;
 
 public class Test {
 
-    public static void player(Player player) {
+    public static void player(ServerPlayer player) {
+        player.getCooldowns().isOnCooldown(Items.DIAMOND_SWORD);
+        player.disableShield();
+        player.hasInfiniteMaterials();
+        player.jumpFromGround();
+        player.getBlockStateOn();
+
+        ItemCooldowns cooldowns = player.getCooldowns();
+        ((ItemCooldownsExt) cooldowns).getItems()
+                .forEach(cooldowns::removeCooldown);
+    }
+
+    public static void bee(Bee bee) {
+    }
+
+    public static void skeleton(Skeleton skeleton) {
+    }
+
+    public static void arrow(Arrow arrow) {
+    }
+
+    public static void damage(DamageSource source, LivingEntity entity) {
+        source.is(DamageTypeTags.ALWAYS_HURTS_ENDER_DRAGONS);
+    }
+
+    public static void event(RenderLivingEvent.Pre<LivingEntity, EntityModel<LivingEntity>> event) {
+    }
+
+    public static void block(BlockState state) {
+    }
+
+    public static void stack(ItemStack stack) {
+        CompoundTag tag = stack.getComponents().get(DataComponents.CUSTOM_DATA).copyTag();
+        stack.getComponents().get(DataComponents.CUSTOM_DATA).copyTag().getString("");
     }
 }

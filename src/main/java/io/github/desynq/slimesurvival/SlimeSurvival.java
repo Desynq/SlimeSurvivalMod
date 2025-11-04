@@ -1,8 +1,13 @@
 package io.github.desynq.slimesurvival;
 
 import io.github.desynq.slimesurvival.client.ClientEventsSubscriber;
+import io.github.desynq.slimesurvival.common.CommonEventsSubscriber;
 import io.github.desynq.slimesurvival.dev.DevOnlyEvents;
+import io.github.desynq.slimesurvival.registry.SlimeSurvivalCreativeTabs;
+import io.github.desynq.slimesurvival.registry.SlimeSurvivalItems;
 import io.github.desynq.slimesurvival.registry.SlimeSurvivalMobEffects;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
 import net.neoforged.fml.loading.FMLEnvironment;
 import org.slf4j.Logger;
 
@@ -22,6 +27,10 @@ public class SlimeSurvival {
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
 
+    public static MutableComponent translatable(String prefix) {
+        return Component.translatable(prefix + MOD_ID);
+    }
+
     // The constructor for the mod class is the first code that is run when your mod is loaded.
     // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically.
     public SlimeSurvival(IEventBus modEventBus, ModContainer modContainer) {
@@ -29,9 +38,12 @@ public class SlimeSurvival {
             NeoForge.EVENT_BUS.register(DevOnlyEvents.class);
         }
         if (FMLEnvironment.dist.isClient()) {
-            NeoForge.EVENT_BUS.register(ClientEventsSubscriber.class);
+            // NeoForge.EVENT_BUS.register(ClientEventsSubscriber.class);
         }
+        NeoForge.EVENT_BUS.register(CommonEventsSubscriber.class);
 
+        SlimeSurvivalItems.ITEMS.register(modEventBus);
+        SlimeSurvivalCreativeTabs.CREATIVE_MODE_TABS.register(modEventBus);
         SlimeSurvivalMobEffects.EFFECTS.register(modEventBus);
 
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us

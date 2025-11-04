@@ -3,9 +3,9 @@ package io.github.desynq.slimesurvival.common.effect;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 
-public class AdventureEffect extends MobEffect {
+public class PingedEffect extends MobEffect {
 
-    public AdventureEffect() {
-        super(MobEffectCategory.HARMFUL, 0xFFAA00);
+    public PingedEffect() {
+        super(MobEffectCategory.HARMFUL, 0x00AAAA);
     }
 }
