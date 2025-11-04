@@ -1,5 +1,6 @@
 package io.github.desynq.slimesurvival.mixin;
 
+import io.github.desynq.slimesurvival.event.IsGlowingEvent;
 import io.github.desynq.slimesurvival.event.IsInvisibleEvent;
 import net.minecraft.world.entity.Entity;
 import net.neoforged.neoforge.common.NeoForge;
@@ -21,5 +22,19 @@ public class EntityMixin {
         IsInvisibleEvent event = new IsInvisibleEvent(entity, cir.getReturnValue());
         NeoForge.EVENT_BUS.post(event);
         cir.setReturnValue(event.isInvisible());
+    }
+
+    @Inject(
+            method = "isCurrentlyGlowing",
+            at = @At("RETURN"),
+            cancellable = true
+    )
+    public void slime$isCurrentlyGlowing(CallbackInfoReturnable<Boolean> cir) {
+        Entity entity = Entity.class.cast(this);
+        if (!entity.level().isClientSide()) return;
+
+        IsGlowingEvent event = new IsGlowingEvent(entity, cir.getReturnValue());
+        NeoForge.EVENT_BUS.post(event);
+        cir.setReturnValue(event.isGlowing());
     }
 }
