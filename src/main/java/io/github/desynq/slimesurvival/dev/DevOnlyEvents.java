@@ -4,15 +4,16 @@ import io.github.desynq.slimesurvival.event.BeeStingEvent;
 import io.github.desynq.slimesurvival.event.DamageAfterArmorEvent;
 import io.github.desynq.slimesurvival.event.IsGlowingEvent;
 import io.github.desynq.slimesurvival.event.IsInvisibleEvent;
+import io.github.desynq.slimesurvival.event.IsInvisibleToEvent;
 import io.github.desynq.slimesurvival.event.NaturalRegenerationCheckEvent;
 import io.github.desynq.slimesurvival.event.PlayerEatEffectEvent;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.monster.Creeper;
+import net.minecraft.world.entity.monster.Phantom;
 import net.minecraft.world.item.Items;
 import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.neoforge.client.event.ClientChatEvent;
 
 public class DevOnlyEvents {
 
@@ -49,8 +50,17 @@ public class DevOnlyEvents {
     @SubscribeEvent
     public static void invisibleCreepers(IsInvisibleEvent event) {
         Entity entity = event.getEntity();
+        if (!entity.level().isClientSide()) return;
         if (entity instanceof Creeper) {
             event.setInvisibility(true);
+        }
+    }
+
+    @SubscribeEvent
+    public static void semiInvisiblePhantoms(IsInvisibleToEvent event) {
+        Entity entity = event.getEntity();
+        if (entity instanceof Phantom) {
+            event.setInvisibility(false);
         }
     }
 

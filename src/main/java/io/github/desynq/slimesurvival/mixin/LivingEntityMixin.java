@@ -1,9 +1,11 @@
 package io.github.desynq.slimesurvival.mixin;
 
 import io.github.desynq.slimesurvival.event.DamageAfterArmorEvent;
+import io.github.desynq.slimesurvival.event.IsGlowingEvent;
 import io.github.desynq.slimesurvival.event.LivingBeforeJumpEvent;
 import io.github.desynq.slimesurvival.event.PlayerEatEffectEvent;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
@@ -89,5 +91,19 @@ public class LivingEntityMixin {
         if (event.isCanceled()) {
             ci.cancel();
         }
+    }
+
+    @Inject(
+            method = "isCurrentlyGlowing",
+            at = @At("RETURN"),
+            cancellable = true
+    )
+    private void slime$isCurrentlyGlowing(CallbackInfoReturnable<Boolean> cir) {
+        Entity entity = Entity.class.cast(this);
+        if (!entity.level().isClientSide()) return;
+
+        IsGlowingEvent event = new IsGlowingEvent(entity, cir.getReturnValue());
+        NeoForge.EVENT_BUS.post(event);
+        cir.setReturnValue(event.isGlowing());
     }
 }
