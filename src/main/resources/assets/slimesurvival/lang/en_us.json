@@ -34,7 +34,7 @@
 
 
 
-  "death.attack.slimesurvival.entropy_kill": "%s's was quantized",
+  "death.attack.slimesurvival.entropy_kill": "%s was quantized",
   "death.attack.slimesurvival.entropy_kill.item": "%s was quantized by %s using %s",
   "death.attack.slimesurvival.entropy_kill.player": "%s was quantized by %s",
 
