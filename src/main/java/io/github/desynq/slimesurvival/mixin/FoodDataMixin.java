@@ -1,14 +1,12 @@
 package io.github.desynq.slimesurvival.mixin;
 
-import io.github.desynq.slimesurvival.event.NaturalRegenerationCheckEvent;
+import io.github.desynq.slimesurvival.common.event.NaturalRegenerationCheckEvent;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodData;
-import net.minecraft.world.level.GameRules;
 import net.neoforged.neoforge.common.NeoForge;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
-import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Mixin(FoodData.class)
 public class FoodDataMixin {

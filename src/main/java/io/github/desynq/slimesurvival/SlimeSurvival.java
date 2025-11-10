@@ -1,23 +1,20 @@
 package io.github.desynq.slimesurvival;
 
-import io.github.desynq.slimesurvival.client.ClientEventsSubscriber;
+import com.mojang.logging.LogUtils;
 import io.github.desynq.slimesurvival.common.CommonEventsSubscriber;
+import io.github.desynq.slimesurvival.common.registry.SlimeSurvivalCreativeTabs;
+import io.github.desynq.slimesurvival.common.registry.SlimeSurvivalItems;
+import io.github.desynq.slimesurvival.common.registry.SlimeSurvivalMobEffects;
 import io.github.desynq.slimesurvival.dev.DevOnlyEvents;
-import io.github.desynq.slimesurvival.registry.SlimeSurvivalCreativeTabs;
-import io.github.desynq.slimesurvival.registry.SlimeSurvivalItems;
-import io.github.desynq.slimesurvival.registry.SlimeSurvivalMobEffects;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
-import net.neoforged.fml.loading.FMLEnvironment;
-import org.slf4j.Logger;
-
-import com.mojang.logging.LogUtils;
-
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
+import net.neoforged.fml.loading.FMLEnvironment;
 import net.neoforged.neoforge.common.NeoForge;
+import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(SlimeSurvival.MOD_ID)

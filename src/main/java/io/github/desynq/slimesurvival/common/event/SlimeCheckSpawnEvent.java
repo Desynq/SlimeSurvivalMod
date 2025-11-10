@@ -1,4 +1,4 @@
-package io.github.desynq.slimesurvival.event;
+package io.github.desynq.slimesurvival.common.event;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.tags.BiomeTags;

@@ -1,8 +1,8 @@
 package io.github.desynq.slimesurvival.mixin;
 
-import io.github.desynq.slimesurvival.event.IsGlowingEvent;
-import io.github.desynq.slimesurvival.event.IsInvisibleEvent;
-import io.github.desynq.slimesurvival.event.IsInvisibleToEvent;
+import io.github.desynq.slimesurvival.common.event.IsGlowingEvent;
+import io.github.desynq.slimesurvival.common.event.IsInvisibleEvent;
+import io.github.desynq.slimesurvival.common.event.IsInvisibleToEvent;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.neoforged.neoforge.common.NeoForge;

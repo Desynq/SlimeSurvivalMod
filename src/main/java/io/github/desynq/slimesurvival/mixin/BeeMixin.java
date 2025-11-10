@@ -1,6 +1,6 @@
 package io.github.desynq.slimesurvival.mixin;
 
-import io.github.desynq.slimesurvival.event.BeeStingEvent;
+import io.github.desynq.slimesurvival.common.event.BeeStingEvent;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.animal.Bee;

@@ -1,10 +1,8 @@
-package io.github.desynq.slimesurvival.registry;
+package io.github.desynq.slimesurvival.common.registry;
 
 import io.github.desynq.slimesurvival.SlimeSurvival;
-import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
-import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.ArrayList;

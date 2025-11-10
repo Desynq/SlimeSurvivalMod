@@ -1,6 +1,6 @@
 package io.github.desynq.slimesurvival.mixin;
 
-import io.github.desynq.slimesurvival.event.SlimeCheckSpawnEvent;
+import io.github.desynq.slimesurvival.common.event.SlimeCheckSpawnEvent;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.EntityType;

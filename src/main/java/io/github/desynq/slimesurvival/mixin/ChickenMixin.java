@@ -1,6 +1,6 @@
 package io.github.desynq.slimesurvival.mixin;
 
-import io.github.desynq.slimesurvival.event.ChickenLayEggEvent;
+import io.github.desynq.slimesurvival.common.event.ChickenLayEggEvent;
 import net.minecraft.world.entity.animal.Chicken;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;

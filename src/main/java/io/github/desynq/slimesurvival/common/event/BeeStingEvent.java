@@ -1,8 +1,7 @@
-package io.github.desynq.slimesurvival.event;
+package io.github.desynq.slimesurvival.common.event;
 
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.animal.Bee;
-import net.neoforged.bus.api.ICancellableEvent;
 import net.neoforged.neoforge.event.entity.EntityEvent;
 
 public class BeeStingEvent extends EntityEvent {

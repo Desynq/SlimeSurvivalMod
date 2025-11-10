@@ -1,14 +1,14 @@
 package io.github.desynq.slimesurvival.dev;
 
-import io.github.desynq.slimesurvival.event.BeeStingEvent;
-import io.github.desynq.slimesurvival.event.ChickenLayEggEvent;
-import io.github.desynq.slimesurvival.event.DamageAfterArmorEvent;
-import io.github.desynq.slimesurvival.event.IsGlowingEvent;
-import io.github.desynq.slimesurvival.event.IsInvisibleEvent;
-import io.github.desynq.slimesurvival.event.IsInvisibleToEvent;
-import io.github.desynq.slimesurvival.event.NaturalRegenerationCheckEvent;
-import io.github.desynq.slimesurvival.event.PlayerEatEffectEvent;
-import io.github.desynq.slimesurvival.event.SlimeCheckSpawnEvent;
+import io.github.desynq.slimesurvival.common.event.BeeStingEvent;
+import io.github.desynq.slimesurvival.common.event.ChickenLayEggEvent;
+import io.github.desynq.slimesurvival.common.event.DamageAfterArmorEvent;
+import io.github.desynq.slimesurvival.common.event.IsGlowingEvent;
+import io.github.desynq.slimesurvival.common.event.IsInvisibleEvent;
+import io.github.desynq.slimesurvival.common.event.IsInvisibleToEvent;
+import io.github.desynq.slimesurvival.common.event.NaturalRegenerationCheckEvent;
+import io.github.desynq.slimesurvival.common.event.PlayerEatEffectEvent;
+import io.github.desynq.slimesurvival.common.event.SlimeCheckSpawnEvent;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attributes;

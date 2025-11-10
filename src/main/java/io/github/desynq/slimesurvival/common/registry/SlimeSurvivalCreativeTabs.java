@@ -1,10 +1,8 @@
-package io.github.desynq.slimesurvival.registry;
+package io.github.desynq.slimesurvival.common.registry;
 
 import io.github.desynq.slimesurvival.SlimeSurvival;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 

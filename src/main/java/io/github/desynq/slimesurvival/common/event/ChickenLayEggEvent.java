@@ -1,4 +1,4 @@
-package io.github.desynq.slimesurvival.event;
+package io.github.desynq.slimesurvival.common.event;
 
 import net.minecraft.world.entity.animal.Chicken;
 import net.minecraft.world.item.Item;

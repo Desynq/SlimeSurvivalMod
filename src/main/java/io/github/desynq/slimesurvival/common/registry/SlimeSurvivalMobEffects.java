@@ -1,4 +1,4 @@
-package io.github.desynq.slimesurvival.registry;
+package io.github.desynq.slimesurvival.common.registry;
 
 import io.github.desynq.slimesurvival.SlimeSurvival;
 import io.github.desynq.slimesurvival.common.effect.AdventureEffect;

@@ -1,7 +1,7 @@
 package io.github.desynq.slimesurvival.common;
 
-import io.github.desynq.slimesurvival.event.LivingBeforeJumpEvent;
-import io.github.desynq.slimesurvival.registry.SlimeSurvivalMobEffects;
+import io.github.desynq.slimesurvival.common.event.LivingBeforeJumpEvent;
+import io.github.desynq.slimesurvival.common.registry.SlimeSurvivalMobEffects;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.phys.Vec3;

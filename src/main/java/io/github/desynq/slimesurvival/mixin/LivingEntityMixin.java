@@ -1,9 +1,9 @@
 package io.github.desynq.slimesurvival.mixin;
 
-import io.github.desynq.slimesurvival.event.DamageAfterArmorEvent;
-import io.github.desynq.slimesurvival.event.IsGlowingEvent;
-import io.github.desynq.slimesurvival.event.LivingBeforeJumpEvent;
-import io.github.desynq.slimesurvival.event.PlayerEatEffectEvent;
+import io.github.desynq.slimesurvival.common.event.DamageAfterArmorEvent;
+import io.github.desynq.slimesurvival.common.event.IsGlowingEvent;
+import io.github.desynq.slimesurvival.common.event.LivingBeforeJumpEvent;
+import io.github.desynq.slimesurvival.common.event.PlayerEatEffectEvent;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
