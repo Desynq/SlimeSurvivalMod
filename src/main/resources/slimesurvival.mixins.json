@@ -5,11 +5,13 @@
   "mixins": [
     "BeeAccessor",
     "BeeMixin",
+    "ChickenMixin",
     "EntityMixin",
     "FoodDataMixin",
     "ItemCooldownsMixin",
     "LivingEntityAccessor",
-    "LivingEntityMixin"
+    "LivingEntityMixin",
+    "SlimeMixin"
   ],
   "client": [
     "TooltipMixin"
