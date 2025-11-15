@@ -21,16 +21,16 @@
 
 
   "effect.slimesurvival.pinged": "Pinged",
-  "effect.slimesurvival.pinged.description": "You feel a shiver down your spine...",
+  "effect.slimesurvival.pinged.description": "Something knows where you are...",
 
   "effect.slimesurvival.rooted": "Rooted",
   "effect.slimesurvival.rooted.description": "Makes you unable to jump.",
 
   "effect.slimesurvival.adventure": "Adventure",
-  "effect.slimesurvival.adventure.description": "Forces you into adventure mode",
+  "effect.slimesurvival.adventure.description": "Forces you into adventure mode.",
 
   "effect.slimesurvival.weak_knees": "Weak Knees",
-  "effect.slimesurvival.weak_knees.description": "You feel a shiver down your spine...",
+  "effect.slimesurvival.weak_knees.description": "Makes your jumps less powerful.",
 
 
 
